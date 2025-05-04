@@ -1,0 +1,212 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+
+
+h2, h3, h4 {
+    font-weight: bold;
+    text-align: center;
+}
+
+p {
+    text-align: center;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ff5733;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.btn:hover {
+    background-color: #e04e2e;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #007BFF; 
+    padding: 10px 100px;
+}
+
+h1 {
+    margin-left: 90px;
+    padding: 0;
+    display: flex;
+    align-items: center; /* Vertically align the logo with navbar items */
+}
+
+h1 {
+    height: 50px; /* Adjust the height of the logo */
+    display: block;
+    margin-right: 15px; /* Space between the logo and navbar links */
+}
+
+
+
+.navbar-nav {
+    list-style: none;
+    display: flex;
+   margin-left: 200px;
+    gap: 15px;
+}
+
+.navbar-nav li {
+    position: relative;
+}
+
+.navbar-nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 5px 10px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+
+.navbar-nav a:hover,
+.navbar-nav .dropdown:hover > a {
+    background-color: #FF6A00; 
+    border-radius: 5px;
+}
+
+
+.navbar-nav a.active {
+    background-color: #FF6A00; 
+    border-radius: 5px;
+    color: white; 
+}
+
+
+.navbar-nav .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #007BFF;
+    min-width: 150px;
+    z-index: 1;
+}
+
+.navbar-nav .dropdown-content a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+}
+
+.navbar-nav .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+.navbar-nav .dropdown-content a:hover {
+    background-color: #FF6A00; 
+}
+
+
+.navbar-toggle {
+    display: none;
+    font-size: 24px;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+footer {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    margin-top: auto; 
+}
+
+footer p {
+    font-size: 1rem;
+    margin-top: 10px;
+}
+/* Hamburger menu styles for mobile */
+.navbar-toggle {
+    display: none;
+    font-size: 30px;
+    color: #fff;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 9999; /* Ensure the hamburger button is on top of other elements */
+}
+
+@media (max-width: 768px) {
+    /* Logo and navbar text alignment */
+    .navbar {
+        padding: 10px 20px;
+        flex-direction: column; /* Stack navbar items vertically on small screens */
+        justify-content: center; /* Center the items */
+    }
+
+    .h1 {
+        margin-left: 0;
+        text-align: center;
+        width: 100%;
+    }
+
+    .navbar-nav {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .navbar-nav.show {
+        display: flex;
+    }
+    
+    .navbar-nav li {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .navbar-nav.show {
+        display: flex; /* Show links when the menu is open */
+    }
+
+    /* Show hamburger button */
+    .navbar-toggle {
+        display: block;
+    }
+
+    .hero {
+        height: 50vh;
+    }
+
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .hero .btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}

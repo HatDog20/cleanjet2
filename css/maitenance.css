@@ -1,0 +1,84 @@
+.maintenance-tips {
+    padding: 40px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.maintenance-tips h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #007BFF;
+    margin-bottom: 20px;
+}
+
+.maintenance-tips p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+/* Tip container styling */
+.tip-category {
+    background-color: #fff;
+    margin: 0 auto 30px;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+}
+
+/* Tip category title */
+.tip-category h3 {
+    font-size: 2rem;
+    color: #007BFF;
+    margin-bottom: 15px;
+}
+
+/* Tip list */
+.tip-category ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Individual tip item */
+.tip-category li {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: left;
+    max-width: 600px;
+    width: 100%;
+}
+
+/* Icon before tip */
+.tip-category li::before {
+    content: "✔️";
+    margin-right: 10px;
+    color: #007BFF;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .maintenance-tips h2 {
+        font-size: 2rem;
+    }
+
+    .maintenance-tips p {
+        font-size: 1rem;
+    }
+
+    .tip-category h3 {
+        font-size: 1.5rem;
+    }
+
+    .tip-category li {
+        font-size: 0.9rem;
+    }
+}

@@ -1,0 +1,130 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: var(--text-color);
+
+  }
+
+  .hero {
+    color: #007BFF;
+    padding: 100px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  
+    height: 300px; /* or any height you want */
+  }
+  .blog-hero h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #007BFF;
+    margin-bottom: 20px;
+text-align: center ;
+  }
+  
+  .blog-hero p {
+    font-size: 1.3rem;
+    max-width: 700px;
+    margin: 0 auto;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+    text-align: center ;
+  }
+
+  .blog-container {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+  }
+
+  .blog-card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: var(--shadow-light);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+
+  .blog-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .blog-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .blog-card-content {
+    padding: 20px;
+  }
+
+  .blog-card-content h3 {
+    margin-top: 0;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+  }
+
+  .blog-card-content p {
+    font-size: 0.95rem;
+    color: #555;
+  }
+
+  .blog-card-content .read-more {
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .blog-card-content .read-more:hover {
+    text-decoration: underline;
+  }
+  .video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+    overflow: hidden;
+  }
+  
+  .video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  .view-more-wrapper {
+   text-align: center;
+    margin-top: 30px;
+    padding: 20px;
+  }
+  
+  .btn-view-more {
+    display: inline-block;
+    background-color: #007BFF;
+    color: white;
+    padding: 12px 25px;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  }
+  
+  .btn-view-more:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+    text-decoration: none;
+  }
+  
+  
