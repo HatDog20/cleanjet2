@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CleanJet - Professional Waxing Services</title>
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/blogs.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="container">
+        <h1 class="navbar-brand">
+          <img src="images/logo1.png" alt="CleanJet Logo" style="height: 100px;">
+        </h1>
+        <button class="navbar-toggle" aria-label="Toggle navigation" onclick="toggleMenu()">
+          &#9776;
+        </button>
+        <ul class="navbar-nav" id="navbarLinks">
+          <li><a href="home.html" class="{{ request()->is('home') ? 'active' : '' }}">Home</a></li>
+          <li><a href="pricing.html" class="{{ request()->is('pricing') ? 'active' : '' }}">Pricing</a></li>
+          <li><a href="booking.html" class="{{ request()->is('booking') ? 'active' : '' }}">Booking</a></li>
+          <li><a href="contact.html" class="{{ request()->is('contact') ? 'active' : '' }}">Contact Us</a></li>
+          <li><a href="about.html" class="{{ request()->is('about') ? 'active' : '' }}">About Us</a></li>
+  
+          <!-- Services Dropdown -->
+          <li class="dropdown">
+            <a href="#" class="dropbtn {{ request()->is('carwash') || request()->is('detailing') || request()->is('waxing') ? 'active' : '' }}">Services</a>
+            <div class="dropdown-content">
+              <a href="carwash.html" class="{{ request()->is('carwash') ? 'active' : '' }}">Car Wash</a>
+              <a href="detailing.html" class="{{ request()->is('detailing') ? 'active' : '' }}">Detailing</a>
+              <a href="waxing.html" class="{{ request()->is('waxing') ? 'active' : '' }}">Waxing</a>
+            </div>
+          </li>
+  
+          <!-- More Dropdown -->
+          <li class="dropdown">
+            <a href="#" class="dropbtn {{ request()->is('gallery') || request()->is('testimonials') || request()->is('faqs') || request()->is('promotions') || request()->is('maintenance') || request()->is('blogs') ? 'active' : '' }}">More</a>
+            <div class="dropdown-content">
+              <a href="gallery.html" class="{{ request()->is('gallery') ? 'active' : '' }}">Gallery</a>
+              <a href="testimonials.html" class="{{ request()->is('testimonials') ? 'active' : '' }}">Testimonials</a>
+              <a href="faqs.html" class="{{ request()->is('faqs') ? 'active' : '' }}">FAQs</a>
+              <a href="promotions.html" class="{{ request()->is('promotions') ? 'active' : '' }}">Promotions</a>
+              <a href="maintenance.html" class="{{ request()->is('maintenance') ? 'active' : '' }}">Maintenance Tips</a>
+              <a href="blogs.html" class="{{ request()->is('blogs') ? 'active' : '' }}">Blogs</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  
+
+
+  <main>
+    
+<!-- Hero Section -->
+<section class="blog-hero">
+  <h1>Our Blog</h1>
+  <p>Satisfying Car Wash Compilation Clean Jet team.</p>
+</section>
+
+<!-- Blog Posts Section -->
+<section class="blog-container">
+  <div class="blog-grid">
+
+    <div class="blog-card">
+      <div class="video-wrapper">
+        <iframe width="100%" height="215" src="vid3.mp4" 
+                title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen></iframe>
+      </div>
+      <div class="blog-card-content">
+        <h3>The Art of the Satisfying Car Wash: Why We Can’t Stop Watching</h3>
+        <p>There’s something truly mesmerizing about seeing thick foam glide over a dusty car, revealing..</p>
+        <div class="view-more-wrapper">
+        <a href="blogs1.html" class="view more">view more →</a>
+      </div>
+      </div>
+    </div>
+    
+
+    <div class="blog-card">
+      <div class="video-wrapper">
+        <iframe width="100%" height="215" src="vid4.mp4" 
+                title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen></iframe>
+      </div>
+      <div class="blog-card-content">
+        <h3>Satisfying Car Wash Compilation: Turning Dirty to Dazzling</h3>
+        <p>Watch as layers of grime vanish before your eyes in this satisfying wash..</p>
+        <div class="view-more-wrapper">
+          <a href="blogs2.html " class="view more">view more →</a>
+        </div>
+      </div>
+    </div>
+    
+
+
+    <div class="blog-card">
+      <div class="video-wrapper">
+        <iframe width="100%" height="215" src="vid2.mp4" 
+                title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen></iframe>
+      </div>
+      <div class="blog-card-content">
+        <h3>From Mud to Mirror: The Most Satisfying Car Wash Moments</h3>
+        <p>Experience the pure joy of transformation as we take the dirtiest rides and make them...</p>
+        <div class="view-more-wrapper">
+          <a href="blogs3.html" class="view more">view more →</a>
+        </div>
+      </div>
+    </div>
+   
+
+  </div>
+</section>
+  </main>
+
+  <link rel="stylesheet" href="css/footer.css">
+  <footer>
+    <div class="footer-container">
+      <div class="footer-about">
+        <h3>About CleanJet</h3>
+        <p>CleanJet provides reliable, high-quality cleaning services for homes and businesses throughout Tagum City and beyond.</p>
+      </div>
+  
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="terms.html">Terms</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-contact">
+        <h3>Contact Us</h3>
+        <p>Email: support@cleanjet.com</p>
+        <p>Phone: +63 912 345 6789</p>
+        <p>Tagum City, Philippines</p>
+      </div>
+  
+      <div class="footer-social">
+        <h3>Follow Us</h3>
+        <a href="#">Facebook</a><br>
+        <a href="#">Instagram</a><br>
+        <a href="#">Twitter</a>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <p>&copy; 2025 CleanJet | Designed by Ken E. Caupit. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const toggleButton = document.querySelector('.navbar-toggle');
+    const navbarNav = document.querySelector('.navbar-nav');
+    
+    toggleButton.addEventListener('click', () => {
+      navbarNav.classList.toggle('active');
+    });
+
+    const currentPage = window.location.pathname.split('/').pop();
+  
+ 
+  const navLinks = document.querySelectorAll('.navbar-nav a');
+  
+  
+  navLinks.forEach(link => {
+    const linkPath = link.getAttribute('href').split('/').pop();
+    
+    if (linkPath === currentPage) {
+      link.classList.add('active');
+    }
+  });
+  function toggleMenu() {
+    const navbarLinks = document.getElementById('navbarLinks');
+    navbarLinks.classList.toggle('show'); // Toggle the 'show' class to display the menu
+}
+  </script>
+</body>
+</html>

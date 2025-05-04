@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CleanJet - Pricing Page</title>
+  <link rel="stylesheet" href="css/booking.css">
+  <link rel="stylesheet" href="css/navbar.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="container">
+        <h1 class="navbar-brand">
+          <img src="images/logo1.png" alt="CleanJet Logo" style="height: 100px;" >
+        </h1>
+        <button class="navbar-toggle" aria-label="Toggle navigation" onclick="toggleMenu()">
+          &#9776;
+        </button>
+        <ul class="navbar-nav" id="navbarLinks">
+          <li><a href="home.html" class="{{ request()->is('home') ? 'active' : '' }}">Home</a></li>
+          <li><a href="pricing.html" class="{{ request()->is('pricing') ? 'active' : '' }}">Pricing</a></li>
+          <li><a href="booking.html" class="{{ request()->is('booking') ? 'active' : '' }}">Booking</a></li>
+          <li><a href="contact.html" class="{{ request()->is('contact') ? 'active' : '' }}">Contact Us</a></li>
+          <li><a href="about.html" class="{{ request()->is('about') ? 'active' : '' }}">About Us</a></li>
+  
+          <!-- Services Dropdown -->
+          <li class="dropdown">
+            <a href="#" class="dropbtn {{ request()->is('carwash') || request()->is('detailing') || request()->is('waxing') ? 'active' : '' }}">Services</a>
+            <div class="dropdown-content">
+              <a href="carwash.html" class="{{ request()->is('carwash') ? 'active' : '' }}">Car Wash</a>
+              <a href="detailing.html" class="{{ request()->is('detailing') ? 'active' : '' }}">Detailing</a>
+              <a href="waxing.html" class="{{ request()->is('waxing') ? 'active' : '' }}">Waxing</a>
+            </div>
+          </li>
+  
+          <!-- More Dropdown -->
+          <li class="dropdown">
+            <a href="#" class="dropbtn {{ request()->is('gallery') || request()->is('testimonials') || request()->is('faqs') || request()->is('promotions') || request()->is('maintenance') || request()->is('blogs') ? 'active' : '' }}">More</a>
+            <div class="dropdown-content">
+              <a href="gallery.html" class="{{ request()->is('gallery') ? 'active' : '' }}">Gallery</a>
+              <a href="testimonials.html" class="{{ request()->is('testimonials') ? 'active' : '' }}">Testimonials</a>
+              <a href="faqs.html" class="{{ request()->is('faqs') ? 'active' : '' }}">FAQs</a>
+              <a href="promotions.html" class="{{ request()->is('promotions') ? 'active' : '' }}">Promotions</a>
+              <a href="maintenance.html" class="{{ request()->is('maintenance') ? 'active' : '' }}">Maintenance Tips</a>
+              <a href="blogs.html" class="{{ request()->is('blogs') ? 'active' : '' }}">Blogs</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  
+
+    <main>
+      <section class="booking">
+        <h2>Book Your Service</h2>
+        <form action="/submit-booking" method="POST" class="booking-form">
+          
+          <div class="form-group">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required placeholder="Enter your full name">
+          </div>
+      
+          <div class="form-group">
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" required placeholder="Enter your email">
+          </div>
+      
+          <div class="form-group">
+            <label for="service">Select Service:</label>
+            <select id="service" name="service" required>
+              <option value="" disabled selected>Select a service</option>
+              <option value="Basic Car Wash">Basic Car Wash</option>
+              <option value="Full Car Detail">Full Car Detail</option>
+              <option value="Premium Car Package">Premium Car Package</option>
+              <option value="Basic Motorcycle Wash">Basic Motorcycle Wash</option>
+              <option value="Full Motorcycle Detail">Full Motorcycle Detail</option>
+              <option value="Premium Motorcycle Package">Premium Motorcycle Package</option>
+            </select>
+          </div>
+      
+          <div class="form-group">
+            <label for="price">Service Price:</label>
+            <input type="text" id="price" name="price" readonly placeholder="Price will appear here">
+          </div>
+
+          <div class="form-group">
+            <label for="promoCode">Promo Code:</label>
+            <input type="text" id="promoCode" name="promoCode" placeholder="Enter promo code (optional)">
+            <button type="button" id="applyPromo" class="btn">Apply Promo Code</button>
+          </div>
+      
+          <div class="form-group">
+            <label for="date">Preferred Date:</label>
+            <input type="date" id="date" name="date" required>
+          </div>
+      
+          <div class="form-group">
+            <label for="time">Preferred Time:</label>
+            <input type="time" id="time" name="time" required>
+          </div>
+      
+          <div class="form-group">
+            <label for="message">Additional Notes (optional):</label>
+            <textarea id="message" name="message" placeholder="Any special requests or notes"></textarea>
+          </div>
+      
+          <button type="submit" id="submitBooking" class="btn">Submit Booking</button>
+        </form>
+      </section>
+      <section class="cancellation">
+        <h2>Cancel Your Booking</h2>
+        <form action="/cancel-booking" method="POST" class="cancellation-form">
+          
+          <div class="form-group">
+            <label for="cancel-name">Full Name:</label>
+            <input type="text" id="cancel-name" name="cancel-name" required placeholder="Enter your full name">
+          </div>
+      
+          <div class="form-group">
+            <label for="cancel-email">Email Address:</label>
+            <input type="email" id="cancel-email" name="cancel-email" required placeholder="Enter your email">
+          </div>
+      
+          <div class="form-group">
+            <label for="cancel-date">Booking Date (optional):</label>
+            <input type="date" id="cancel-date" name="cancel-date">
+          </div>
+      
+          <div class="form-group">
+            <label for="cancel-reason">Reason for Cancellation (optional):</label>
+            <textarea id="cancel-reason" name="cancel-reason" placeholder="Let us know why you're canceling"></textarea>
+          </div>
+      
+          <button type="submit" class="btn cancel-btn">Submit Cancellation</button>
+        </form>
+      </section><br>
+      
+      
+      <div id="paymentSection" class="modal" style="display:none;">
+        <div class="modal-content">
+          <span class="close-payment">&times;</span>
+          <h2>Complete Your Downpayment</h2>
+          <p>Please pay ₱50 to confirm your booking.</p>
+          <img src="images/g1.jpg" alt="GCash QR Code" style="width:200px; margin: 20px auto; display: block;">
+          <p style="text-align: center;">Scan this QR code to pay.</p>
+          <button id="confirmPayment" class="btn" style="margin-top: 20px;">I Have Paid</button>
+        </div>
+      </div>
+      
+      <div id="cancellationModal" class="modal" style="display:none;">
+        <div class="modal-content">
+          <span class="close-cancel">&times;</span>
+          <h2>Booking Cancelled</h2>
+          <p>Your booking has been cancelled successfully.</p>
+          <p><strong>Note:</strong> Downpayment is non-refundable.</p>
+          <button id="closeCancelModal" class="btn">Close</button>
+        </div>
+      </div>
+      
+     
+      <div id="confirmationModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Thank You for Your Booking!</h2>
+          <p>Your booking has been successfully submitted. We will confirm your appointment via email soon.</p>
+          <button id="closeModal" class="btn">Close</button>
+        </div>
+      </div>
+    </main>
+
+    <link rel="stylesheet" href="css/footer.css">
+    <footer>
+      <div class="footer-container">
+        <div class="footer-about">
+          <h3>About CleanJet</h3>
+          <p>CleanJet provides reliable, high-quality cleaning services for homes and businesses throughout Tagum City and beyond.</p>
+        </div>
+    
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="terms.html">Terms</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+    
+        <div class="footer-contact">
+          <h3>Contact Us</h3>
+          <p>Email: support@cleanjet.com</p>
+          <p>Phone: +63 912 345 6789</p>
+          <p>Tagum City, Philippines</p>
+        </div>
+    
+        <div class="footer-social">
+          <h3>Follow Us</h3>
+          <a href="#">Facebook</a><br>
+          <a href="#">Instagram</a><br>
+          <a href="#">Twitter</a>
+        </div>
+      </div>
+    
+      <div class="footer-bottom">
+        <p>&copy; 2025 CleanJet | Designed by Ken E. Caupit. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      const toggleButton = document.querySelector('.navbar-toggle');
+      const navbarNav = document.querySelector('.navbar-nav');
+      
+      toggleButton.addEventListener('click', () => {
+        navbarNav.classList.toggle('active');
+      });
+
+      const currentPage = window.location.pathname.split('/').pop();
+    
+   
+    const navLinks = document.querySelectorAll('.navbar-nav a');
+    
+    
+    navLinks.forEach(link => {
+      const linkPath = link.getAttribute('href').split('/').pop();
+      
+      if (linkPath === currentPage) {
+        link.classList.add('active');
+      }
+    });
+    </script>
+
+    <script>
+      const servicePrices = {
+        "Basic Car Wash": "₱150",
+        "Full Car Detail": "₱299",
+        "Premium Car Package": "₱499",
+        "Basic Motorcycle Wash": "₱100",
+        "Full Motorcycle Detail": "₱120",
+        "Premium Motorcycle Package": "₱299"
+      };
+
+      const promoCodes = {
+        "DISCOUNT20": 20,
+        "BOGOFREE": 30,
+        "WINTER20": 20
+      };
+
+      const serviceSelect = document.getElementById('service');
+      const priceInput = document.getElementById('price');
+      const promoCodeInput = document.getElementById('promoCode');
+      const applyPromoButton = document.getElementById('applyPromo');
+      const submitButton = document.getElementById('submitBooking');
+      const paymentSection = document.getElementById("paymentSection");
+      const confirmPayment = document.getElementById("confirmPayment");
+      const modal = document.getElementById("confirmationModal");
+      const closeModalButton = document.getElementById("closeModal");
+      const closePaymentBtn = document.querySelector(".close-payment");
+      const closeBtn = document.querySelector(".close");
+
+      let selectedPrice = 0;
+
+      serviceSelect.addEventListener('change', function() {
+        const selectedService = this.value;
+        selectedPrice = parseFloat(servicePrices[selectedService].replace("₱", "").replace(",", ""));
+        priceInput.value = servicePrices[selectedService];
+      });
+
+      applyPromoButton.addEventListener('click', function() {
+        const promoCode = promoCodeInput.value.trim().toUpperCase();
+        if (promoCodes[promoCode]) {
+          const discount = promoCodes[promoCode];
+          const discountedPrice = selectedPrice * (1 - discount / 100);
+          priceInput.value = `₱${discountedPrice.toFixed(2)}`;
+          alert(`Promo code applied! You get a ${discount}% discount.`);
+        } else {
+          alert('Invalid promo code!');
+        }
+      });
+
+      submitButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        paymentSection.style.display = "block";
+      });
+
+      closePaymentBtn.addEventListener('click', function() {
+        paymentSection.style.display = "none";
+      });
+
+      confirmPayment.addEventListener('click', function() {
+        paymentSection.style.display = "none";
+        modal.style.display = "block";
+      });
+
+      closeBtn.addEventListener('click', function() {
+        modal.style.display = "none";
+      });
+
+      closeModalButton.addEventListener('click', function() {
+        modal.style.display = "none";
+      });
+
+      function toggleMenu() {
+    const navbarLinks = document.getElementById('navbarLinks');
+    navbarLinks.classList.toggle('show'); // Toggle the 'show' class to display the menu
+}
+    </script>
+    <script>
+      // Handle cancellation form submission
+      const cancellationForm = document.querySelector('.cancellation-form');
+      const cancellationModal = document.getElementById('cancellationModal');
+      const closeCancelModal = document.getElementById('closeCancelModal');
+      const spanCloseCancel = document.querySelector('.close-cancel');
+    
+      if (cancellationForm) {
+        cancellationForm.addEventListener('submit', function(e) {
+          e.preventDefault(); // Prevent real submission for demo
+          cancellationModal.style.display = "block";
+        });
+      }
+    
+      if (closeCancelModal) {
+        closeCancelModal.addEventListener('click', function() {
+          cancellationModal.style.display = "none";
+        });
+      }
+    
+      if (spanCloseCancel) {
+        spanCloseCancel.addEventListener('click', function() {
+          cancellationModal.style.display = "none";
+        });
+      }
+    
+      // Close modal if user clicks outside it
+      window.addEventListener('click', function(e) {
+        if (e.target === cancellationModal) {
+          cancellationModal.style.display = "none";
+        }
+      });
+    </script>
+    
+</body>
+</html>

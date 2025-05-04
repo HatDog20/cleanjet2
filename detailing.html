@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CleanJet - Auto Detailing Services</title>
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/Services.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="container">
+        <h1 class="navbar-brand">
+          <img src="images/logo1.png" alt="CleanJet Logo" style="height: 100px;" >
+        </h1>
+        <button class="navbar-toggle" aria-label="Toggle navigation" onclick="toggleMenu()">
+          &#9776;
+        </button>
+        <ul class="navbar-nav" id="navbarLinks">
+          <li><a href="home.html" class="{{ request()->is('home') ? 'active' : '' }}">Home</a></li>
+          <li><a href="pricing.html" class="{{ request()->is('pricing') ? 'active' : '' }}">Pricing</a></li>
+          <li><a href="booking.html" class="{{ request()->is('booking') ? 'active' : '' }}">Booking</a></li>
+          <li><a href="contact.html" class="{{ request()->is('contact') ? 'active' : '' }}">Contact Us</a></li>
+          <li><a href="about.html" class="{{ request()->is('about') ? 'active' : '' }}">About Us</a></li>
+  
+          <!-- Services Dropdown -->
+          <li class="dropdown">
+            <a href="#" class="dropbtn {{ request()->is('carwash') || request()->is('detailing') || request()->is('waxing') ? 'active' : '' }}">Services</a>
+            <div class="dropdown-content">
+              <a href="carwash.html" class="{{ request()->is('carwash') ? 'active' : '' }}">Car Wash</a>
+              <a href="detailing.html" class="{{ request()->is('detailing') ? 'active' : '' }}">Detailing</a>
+              <a href="waxing.html" class="{{ request()->is('waxing') ? 'active' : '' }}">Waxing</a>
+            </div>
+          </li>
+  
+          <!-- More Dropdown -->
+          <li class="dropdown">
+            <a href="#" class="dropbtn {{ request()->is('gallery') || request()->is('testimonials') || request()->is('faqs') || request()->is('promotions') || request()->is('maintenance') || request()->is('blogs') ? 'active' : '' }}">More</a>
+            <div class="dropdown-content">
+              <a href="gallery.html" class="{{ request()->is('gallery') ? 'active' : '' }}">Gallery</a>
+              <a href="testimonials.html" class="{{ request()->is('testimonials') ? 'active' : '' }}">Testimonials</a>
+              <a href="faqs.html" class="{{ request()->is('faqs') ? 'active' : '' }}">FAQs</a>
+              <a href="promotions.html" class="{{ request()->is('promotions') ? 'active' : '' }}">Promotions</a>
+              <a href="maintenance.html" class="{{ request()->is('maintenance') ? 'active' : '' }}">Maintenance Tips</a>
+              <a href="blogs.html" class="{{ request()->is('blogs') ? 'active' : '' }}">Blogs</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  
+
+  <main>
+    <section class="service-hero" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/w8.jpeg');">
+      <div class="container">
+        <h1>Professional Auto Detailing</h1>
+        <p>Restore your vehicle to showroom condition</p>
+        <a href="booking.html" class="button" style="color: orange;">Book Detailing</a>
+      </div>
+    </section>
+
+    <section class="service-details">
+      <div class="container">
+        <div class="service-content">
+          <div class="service-text">
+            <h2>Our Detailing Packages</h2>
+            <div class="package">
+              <h3>Basic Detail</h3>
+              <p>Perfect for regular maintenance:</p>
+              <ul>
+                <li>Thorough interior vacuuming</li>
+                <li>Dashboard and console cleaning</li>
+                <li>Window cleaning</li>
+                <li>Exterior hand wash</li>
+                <li>Tire dressing</li>
+              </ul>
+            </div>
+            <div class="package">
+              <h3>Premium Detail</h3>
+              <p>For deep cleaning and protection:</p>
+              <ul>
+                <li>Everything in Basic Detail</li>
+                <li>Leather conditioning</li>
+                <li>Carpet shampooing</li>
+                <li>Clay bar treatment</li>
+                <li>Hand wax application</li>
+              </ul>
+            </div>
+            <div class="package">
+              <h3>Showroom Detail</h3>
+              <p>The ultimate in vehicle care:</p>
+              <ul>
+                <li>Everything in Premium Detail</li>
+                <li>Paint correction</li>
+                <li>Ceramic coating option</li>
+                <li>Engine bay detailing</li>
+                <li>Undercarriage wash</li>
+              </ul>
+            </div>
+          </div>
+          <div class="service-image">
+            <img src="images/w4.jpg" alt="Auto detailing process">
+            <div class="price-badge">
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="before-after">
+      <div class="container">
+        <h2>Detailing Results</h2>
+        <div class="comparison-slider">
+          <div class="before">
+            <img src="images/w5.jpeg" alt="Before detailing">
+            <span>Before</span>
+          </div>
+          <div class="after">
+            <img src="images/w6.jpeg" alt="After detailing">
+            <span>After</span>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main><br>
+
+  <link rel="stylesheet" href="css/footer.css">
+  <footer>
+    <div class="footer-container">
+      <div class="footer-about">
+        <h3>About CleanJet</h3>
+        <p>CleanJet provides reliable, high-quality cleaning services for homes and businesses throughout Tagum City and beyond.</p>
+      </div>
+  
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="terms.html">Terms</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-contact">
+        <h3>Contact Us</h3>
+        <p>Email: support@cleanjet.com</p>
+        <p>Phone: +63 912 345 6789</p>
+        <p>Tagum City, Philippines</p>
+      </div>
+  
+      <div class="footer-social">
+        <h3>Follow Us</h3>
+        <a href="#">Facebook</a><br>
+        <a href="#">Instagram</a><br>
+        <a href="#">Twitter</a>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <p>&copy; 2025 CleanJet | Designed by Ken E. Caupit. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const toggleButton = document.querySelector('.navbar-toggle');
+    const navbarNav = document.querySelector('.navbar-nav');
+    
+    toggleButton.addEventListener('click', () => {
+      navbarNav.classList.toggle('active');
+    });
+
+    const currentPage = window.location.pathname.split('/').pop();
+  
+ 
+  const navLinks = document.querySelectorAll('.navbar-nav a');
+  
+  
+  navLinks.forEach(link => {
+    const linkPath = link.getAttribute('href').split('/').pop();
+    
+    if (linkPath === currentPage) {
+      link.classList.add('active');
+    }
+  });
+  function toggleMenu() {
+    const navbarLinks = document.getElementById('navbarLinks');
+    navbarLinks.classList.toggle('show'); // Toggle the 'show' class to display the menu
+}
+  </script>
+</body>
+</html>

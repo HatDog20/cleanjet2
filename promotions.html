@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CleanJet - Pricing Page</title>
+  <link rel="stylesheet" href="css/promotions.css">
+  <link rel="stylesheet" href="css/navbar.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="container">
+        <h1 class="navbar-brand">
+          <img src="images/logo1.png" alt="CleanJet Logo" style="height: 100px;">
+        </h1>
+        <button class="navbar-toggle" aria-label="Toggle navigation" onclick="toggleMenu()">
+          &#9776;
+        </button>
+        <ul class="navbar-nav" id="navbarLinks">
+          <li><a href="home.html" class="{{ request()->is('home') ? 'active' : '' }}">Home</a></li>
+          <li><a href="pricing.html" class="{{ request()->is('pricing') ? 'active' : '' }}">Pricing</a></li>
+          <li><a href="booking.html" class="{{ request()->is('booking') ? 'active' : '' }}">Booking</a></li>
+          <li><a href="contact.html" class="{{ request()->is('contact') ? 'active' : '' }}">Contact Us</a></li>
+          <li><a href="about.html" class="{{ request()->is('about') ? 'active' : '' }}">About Us</a></li>
+  
+          <!-- Services Dropdown -->
+          <li class="dropdown">
+            <a href="#" class="dropbtn {{ request()->is('carwash') || request()->is('detailing') || request()->is('waxing') ? 'active' : '' }}">Services</a>
+            <div class="dropdown-content">
+              <a href="carwash.html" class="{{ request()->is('carwash') ? 'active' : '' }}">Car Wash</a>
+              <a href="detailing.html" class="{{ request()->is('detailing') ? 'active' : '' }}">Detailing</a>
+              <a href="waxing.html" class="{{ request()->is('waxing') ? 'active' : '' }}">Waxing</a>
+            </div>
+          </li>
+  
+          <!-- More Dropdown -->
+          <li class="dropdown">
+            <a href="#" class="dropbtn {{ request()->is('gallery') || request()->is('testimonials') || request()->is('faqs') || request()->is('promotions') || request()->is('maintenance') || request()->is('blogs') ? 'active' : '' }}">More</a>
+            <div class="dropdown-content">
+              <a href="gallery.html" class="{{ request()->is('gallery') ? 'active' : '' }}">Gallery</a>
+              <a href="testimonials.html" class="{{ request()->is('testimonials') ? 'active' : '' }}">Testimonials</a>
+              <a href="faqs.html" class="{{ request()->is('faqs') ? 'active' : '' }}">FAQs</a>
+              <a href="promotions.html" class="{{ request()->is('promotions') ? 'active' : '' }}">Promotions</a>
+              <a href="maintenance.html" class="{{ request()->is('maintenance') ? 'active' : '' }}">Maintenance Tips</a>
+              <a href="blogs.html" class="{{ request()->is('blogs') ? 'active' : '' }}">Blogs</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  
+    
+
+  <main>
+   
+    <section class="promotions">
+      <div class="container">
+        <h2>Our Latest Promotions</h2>
+        <p>Check out our latest offers and discounts on services! Don't miss out!</p>
+        
+        
+        <div class="promotion-item">
+          <div class="promotion-img">
+            <img src="images/promo1.jpg" alt="Promo 1">
+          </div>
+          <div class="promotion-details">
+            <h3>Discounted Service Package</h3>
+            <p>Get 20% off on our premium service package. Limited time offer!</p>
+            <a href="#" class="btn" id="promo1-btn">Get Promo Code</a>
+          </div>
+        </div>
+    
+      
+        <div class="promotion-item">
+          <div class="promotion-img">
+            <img src="images/promo2.jpg" alt="Promo 2">
+          </div>
+          <div class="promotion-details">
+            <h3>Discounted Service Package </h3>
+            <p>Get 10% off on our premium service package. Limited time offer!</p>
+            <a href="#" class="btn" id="promo2-btn">Get Promo Code</a>
+          </div>
+        </div>
+    
+        
+        <div class="promotion-item">
+          <div class="promotion-img">
+            <img src="images/promo3.jpg" alt="Promo 3">
+          </div>
+          <div class="promotion-details">
+            <h3>Seasonal Discount</h3>
+            <p>Enjoy up to 30% off on selected services this season. Book today!</p>
+            <a href="#" class="btn" id="promo3-btn">Get Promo Code</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+ 
+   
+<div id="promo-modal" class="promo-modal">
+  <div class="modal-content">
+    <span class="close-btn" id="close-modal">&times;</span>
+    <h2>Your Promo Code</h2>
+    <p id="promo-code-text">Use code <strong>DISCOUNT20</strong> at checkout to get 20% off on your next service!</p>
+    <button id="copy-code-btn" class="btn">Copy Code</button>
+    <button id="ok-btn" class="btn">OK</button>
+  </div>
+</div>
+
+      
+      
+  
+  </main>
+
+  <link rel="stylesheet" href="css/footer.css">
+  <footer>
+    <div class="footer-container">
+      <div class="footer-about">
+        <h3>About CleanJet</h3>
+        <p>CleanJet provides reliable, high-quality cleaning services for homes and businesses throughout Tagum City and beyond.</p>
+      </div>
+  
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="terms.html">Terms</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-contact">
+        <h3>Contact Us</h3>
+        <p>Email: support@cleanjet.com</p>
+        <p>Phone: +63 912 345 6789</p>
+        <p>Tagum City, Philippines</p>
+      </div>
+  
+      <div class="footer-social">
+        <h3>Follow Us</h3>
+        <a href="#">Facebook</a><br>
+        <a href="#">Instagram</a><br>
+        <a href="#">Twitter</a>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <p>&copy; 2025 CleanJet | Designed by Ken E. Caupit. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const toggleButton = document.querySelector('.navbar-toggle');
+    const navbarNav = document.querySelector('.navbar-nav');
+    
+    toggleButton.addEventListener('click', () => {
+      navbarNav.classList.toggle('active');
+    });
+
+    
+  </script>
+  <script>
+   
+    const currentPage = window.location.pathname.split('/').pop();
+    
+    
+    const navLinks = document.querySelectorAll('.navbar-nav a');
+    
+    
+    navLinks.forEach(link => {
+      const linkPath = link.getAttribute('href').split('/').pop();
+      
+      if (linkPath === currentPage) {
+        link.classList.add('active');
+      }
+    });
+
+   
+
+
+var modal = document.getElementById('promo-modal');
+var closeModal = document.getElementById('close-modal');
+var promoCodeText = document.getElementById('promo-code-text');
+var copyCodeBtn = document.getElementById('copy-code-btn');
+var okBtn = document.getElementById('ok-btn');
+
+
+function openPromoModal(promoCode) {
+  modal.style.display = 'block';
+  promoCodeText.innerHTML = `Use code <strong>${promoCode}</strong> at checkout to get your discount!`;
+}
+
+document.getElementById('promo1-btn').onclick = function() {
+  openPromoModal('DISCOUNT20');
+};
+
+document.getElementById('promo2-btn').onclick = function() {
+  openPromoModal('BOGOFREE');
+};
+
+document.getElementById('promo3-btn').onclick = function() {
+  openPromoModal('SEASON30');
+};
+
+
+closeModal.onclick = function() {
+  modal.style.display = 'none';
+};
+
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = 'none';
+  }
+}
+
+
+copyCodeBtn.onclick = function() {
+  var promoCode = promoCodeText.querySelector('strong').textContent;
+  navigator.clipboard.writeText(promoCode).then(function() {
+    alert('Promo code copied to clipboard!');
+  }).catch(function(err) {
+    alert('Error copying promo code: ' + err);
+  });
+};
+
+
+okBtn.onclick = function() {
+  modal.style.display = 'none';
+};
+
+
+function toggleMenu() {
+    const navbarLinks = document.getElementById('navbarLinks');
+    navbarLinks.classList.toggle('show'); // Toggle the 'show' class to display the menu
+}
+  </script>
+
+
+
+
+</body>
+</html>

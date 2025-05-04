@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CleanJet - Home Page</title>
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/blogs.css">
+  <link rel="stylesheet" href="css/footer.css">
+ 
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="container">
+        <h1 class="navbar-brand">
+          <img src="images/logo1.png" alt="CleanJet Logo" style="height: 100px; border-radius: 0;">
+        </h1>
+        <button class="navbar-toggle" aria-label="Toggle navigation" onclick="toggleMenu()">
+          &#9776;
+        </button>
+        <ul class="navbar-nav" id="navbarLinks">
+          <li><a href="home.html" class="{{ request()->is('home') ? 'active' : '' }}">Home</a></li>
+          <li><a href="pricing.html" class="{{ request()->is('pricing') ? 'active' : '' }}">Pricing</a></li>
+          <li><a href="booking.html" class="{{ request()->is('booking') ? 'active' : '' }}">Booking</a></li>
+          <li><a href="contact.html" class="{{ request()->is('contact') ? 'active' : '' }}">Contact Us</a></li>
+          <li><a href="about.html" class="{{ request()->is('about') ? 'active' : '' }}">About Us</a></li>
+  
+          <!-- Services Dropdown -->
+          <li class="dropdown">
+            <a href="#" class="dropbtn {{ request()->is('carwash') || request()->is('detailing') || request()->is('waxing') ? 'active' : '' }}">Services</a>
+            <div class="dropdown-content">
+              <a href="carwash.html" class="{{ request()->is('carwash') ? 'active' : '' }}">Car Wash</a>
+              <a href="detailing.html" class="{{ request()->is('detailing') ? 'active' : '' }}">Detailing</a>
+              <a href="waxing.html" class="{{ request()->is('waxing') ? 'active' : '' }}">Waxing</a>
+            </div>
+          </li>
+  
+          <!-- More Dropdown -->
+          <li class="dropdown">
+            <a href="#" class="dropbtn {{ request()->is('gallery') || request()->is('testimonials') || request()->is('faqs') || request()->is('promotions') || request()->is('maintenance') || request()->is('blogs') ? 'active' : '' }}">More</a>
+            <div class="dropdown-content">
+              <a href="gallery.html" class="{{ request()->is('gallery') ? 'active' : '' }}">Gallery</a>
+              <a href="testimonials.html" class="{{ request()->is('testimonials') ? 'active' : '' }}">Testimonials</a>
+              <a href="faqs.html" class="{{ request()->is('faqs') ? 'active' : '' }}">FAQs</a>
+              <a href="promotions.html" class="{{ request()->is('promotions') ? 'active' : '' }}">Promotions</a>
+              <a href="maintenance.html" class="{{ request()->is('maintenance') ? 'active' : '' }}">Maintenance Tips</a>
+              <a href="blogs.html" class="{{ request()->is('blogs') ? 'active' : '' }}">Blogs</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header><br>
+  
+
+  <main>
+      
+      <section class="hero" style="background: url('images/wash.jpg') no-repeat center center/cover; height: 60vh; color: rgb(12, 11, 11); text-align: center; padding: 60px 20px;">
+        <div class="hero-content">
+            <h2 style="color: black; text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); background-color: rgba(255, 255, 255, 0.5); padding: 10px; border-radius: 5px;">Welcome to CleanJet</h2>
+            <p style="color: rgb(0, 0, 0); text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5); background-color: rgba(255, 255, 255, 0.5); padding: 10px; border-radius: 5px;">Your trusted car and motorcycle wash service!</p>
+            <a href="booking.html" class="btn">Book Now</a>
+        </div>
+      </section><br>
+
+
+
+    
+    <section class="about">
+      <div class="container">
+        <h3>About CleanJet</h3>
+        <p>At CleanJet, we take pride in delivering top-tier car and motorcycle wash services. Whether you need a quick wash or a full detailing, our professional team uses state-of-the-art equipment to ensure your vehicle gets the best treatment possible.</p>
+        <a href="about.html" class="btn" >Learn More</a>
+      </div>
+    </section>
+
+    
+    <section class="services">
+      <div class="container">
+        <h3>Our Featured Services</h3>
+        <div class="service-item">
+          <img src="images/c1.jpg" alt="Car Wash">
+          <h4>Car Wash</h4>
+          <p>Get your car cleaned with high-quality products and professional service.</p>
+        </div>
+        <div class="service-item">
+          <img src="images/c2.jpg" alt="Motorcycle Wash">
+          <h4>Motorcycle Wash</h4>
+          <p>Our motorcycle wash ensures precision and a perfect finish for your bike!</p>
+        </div>
+        <div class="service-item">
+          <img src="images/c3.jpg" alt="Detailing">
+          <h4>Detailing</h4>
+          <p>Bring back your vehicle’s shine with our expert detailing services.</p>
+        </div>
+      </div>
+    </section><br>
+
+ <!-- Hero Section -->
+<section class="blog-hero">
+  <h1>Our Blog</h1>
+  <p>Satisfying Car Wash Compilation Clean Jet team</p>
+</section>
+
+<!-- Blog Posts Section -->
+<section class="blog-container">
+  <div class="blog-grid">
+
+    <div class="blog-card">
+      <div class="video-wrapper">
+        <iframe width="100%" height="215" src="vid3.mp4" 
+                title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen></iframe>
+      </div>
+      <div class="blog-card-content">
+        <h3>The Art of the Satisfying Car Wash: Why We Can’t Stop Watching</h3>
+        <p>There’s something truly mesmerizing about seeing thick foam glide over a dusty car, revealing a spotless shine beneath. In this video, we showcase why satisfying car wash videos have become a favorite for millions relaxing, rewarding, and oddly therapeutic.</p>
+        <div class="view-more-wrapper">
+        <a href="blogs1.html" class="view more">view more →</a>
+      </div>
+      </div>
+    </div>
+    
+
+    <div class="blog-card">
+      <div class="video-wrapper">
+        <iframe width="100%" height="215" src="vid4.mp4" 
+                title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen></iframe>
+      </div>
+      <div class="blog-card-content">
+        <h3>Satisfying Car Wash Compilation: Turning Dirty to Dazzling</h3>
+        <p>Watch as layers of grime vanish before your eyes in this satisfying wash..</p>
+        <div class="view-more-wrapper">
+          <a href="blogs2.html " class="view more">view more →</a>
+        </div>
+      </div>
+    </div>
+    
+
+
+    <div class="blog-card">
+      <div class="video-wrapper">
+        <iframe width="100%" height="215" src="vid2.mp4" 
+                title="YouTube video player" frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen></iframe>
+      </div>
+      <div class="blog-card-content">
+        <h3>From Mud to Mirror: The Most Satisfying Car Wash Moments</h3>
+        <p>Experience the pure joy of transformation as we take the dirtiest rides and make them...</p>
+        <div class="view-more-wrapper">
+          <a href="blogs3.html" class="view more">view more →</a>
+        </div>
+      </div>
+    </div>
+    <div class="view-more-wrapper">
+      <a href="blogs.html" class="btn-view-more">View More Blogs →</a>
+    </div>
+    
+
+  </div>
+</section>
+
+   
+<section class="testimonials">
+    <div class="container">
+      <h3>What Our Customers Say</h3>
+      <div class="testimonial-item">
+        <p>"CleanJet transformed my car! It looks better than new. The service was fast and professional."</p>
+        <span>- John Doe</span>
+      </div>
+      <div class="testimonial-item">
+        <p>"I’ve been bringing my motorcycle to CleanJet for a while, and I’ve never been disappointed. Highly recommended!"</p>
+        <span>- Jane Smith</span>
+      </div>
+      <a href="testimonials.html" class="btn">See More</a>
+    </div>
+  </section>
+  
+    
+    <section class="cta">
+      <div class="container">
+        <h3>Ready to Experience CleanJet?</h3>
+        <p>Get your vehicle looking brand new! Book an appointment with CleanJet today.</p>
+        <a href="booking.html" class="btn">Book Now</a>
+      </div>
+    </section>
+  </main><br>
+
+  <footer>
+    <div class="footer-container">
+      <div class="footer-about">
+        <h3>About CleanJet</h3>
+        <p>CleanJet provides reliable, high-quality cleaning services for homes and businesses throughout Tagum City and beyond.</p>
+      </div>
+  
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="home.html">Home</a></li>
+          <li><a href="terms.html">Terms</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer-contact">
+        <h3>Contact Us</h3>
+        <p>Email: support@cleanjet.com</p>
+        <p>Phone: +63 912 345 6789</p>
+        <p>Tagum City, Philippines</p>
+      </div>
+  
+      <div class="footer-social">
+        <h3>Follow Us</h3>
+        <a href="#">Facebook</a><br>
+        <a href="#">Instagram</a><br>
+        <a href="#">Twitter</a>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <p>&copy; 2025 CleanJet | Designed by Ken E. Caupit. All rights reserved.</p>
+    </div>
+  </footer>
+  
+  
+
+  <script>
+    const toggleButton = document.querySelector('.navbar-toggle');
+    const navbarNav = document.querySelector('.navbar-nav');
+    
+    toggleButton.addEventListener('click', () => {
+      navbarNav.classList.toggle('active');
+    });
+  </script>
+  <script>
+    
+    const currentPage = window.location.pathname.split('/').pop();
+    
+    
+    const navLinks = document.querySelectorAll('.navbar-nav a');
+    
+    
+    navLinks.forEach(link => {
+      const linkPath = link.getAttribute('href').split('/').pop();
+      
+      if (linkPath === currentPage) {
+        link.classList.add('active');
+      }
+    });
+
+    function toggleMenu() {
+    const navbarLinks = document.getElementById('navbarLinks');
+    navbarLinks.classList.toggle('show'); // Toggle the 'show' class to display the menu
+}
+
+  </script>
+  
+</body>
+</html>

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+    }
+
+    .dashboard-header {
+      background-color: #007BFF;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .dashboard-content {
+      padding: 20px;
+    }
+
+    .card {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #007BFF;
+    }
+
+    .card button {
+      background-color: #007BFF;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .card button:hover {
+      background-color: #0056b3;
+    }
+
+    .table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    .table th, .table td {
+      padding: 12px;
+      text-align: left;
+      border: 1px solid #ddd;
+    }
+
+    .table th {
+      background-color: #007BFF;
+      color: white;
+    }
+
+    .table td {
+      background-color: #f9f9f9;
+    }
+  </style>
+</head>
+<body>
+  <div class="dashboard-header">
+    <h1>Welcome to CleanJet Admin Dashboard</h1>
+  </div>
+
+  <button onclick="logout()">Logout</button>
+
+  <div class="dashboard-content">
+  
+    <!-- Promotions Management -->
+    <div class="card">
+      <h3>📢 Manage Promotions</h3>
+      <textarea id="promotion-input" rows="5" placeholder="Enter new promotion details..."></textarea>
+      <button onclick="postPromotion()">Post Promotion</button>
+      <div id="promotions-list"></div>
+    </div>
+  
+    <!-- Pricing Management -->
+    <div class="card">
+      <h3>Manage Services & Pricing</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Service Name</th>
+            <th>Price (₱)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="text" value="Basic Car Wash" id="service1-name"></td>
+            <td><input type="number" value="150" id="service1-price"></td>
+          </tr>
+          <tr>
+            <td><input type="text" value="Full Car Detail" id="service2-name"></td>
+            <td><input type="number" value="299" id="service2-price"></td>
+          </tr>
+          <tr>
+            <td><input type="text" value="Premium Car Package" id="service3-name"></td>
+            <td><input type="number" value="499" id="service3-price"></td>
+          </tr>
+          <tr>
+            <td><input type="text" value="Basic Motorcycle Wash" id="service4-name"></td>
+            <td><input type="number" value="100" id="service4-price"></td>
+          </tr>
+          <tr>
+            <td><input type="text" value="Full Motorcycle Detail" id="service5-name"></td>
+            <td><input type="number" value="120" id="service5-price"></td>
+          </tr>
+          <tr>
+            <td><input type="text" value="Premium Motorcycle Package" id="service6-name"></td>
+            <td><input type="number" value="299" id="service6-price"></td>
+          </tr>
+        </tbody>
+      </table>
+      <button onclick="saveChanges()">Save Changes</button>
+    </div>
+    
+  
+    <!-- Bookings Overview -->
+    <div class="card">
+      <h3>📅 View Bookings</h3>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Service</th>
+            <th>Date</th>
+            <th>Details</th>
+          </tr>
+        </thead>
+        <tbody id="booking-list"></tbody>
+      </table>
+    </div>
+  
+    <!-- Blog Management -->
+    <div class="card">
+      <h3>📝 Blog Posts</h3>
+      <input type="text" placeholder="Blog title">
+      <textarea rows="4" placeholder="Write blog content..."></textarea>
+      <button>Publish Blog</button>
+    </div>
+  
+    <!-- Video Upload -->
+    <div class="card">
+      <h3>📽️ Add Satisfying Wash Videos</h3>
+      <input type="text" placeholder="Video title">
+      <input type="text" placeholder="YouTube or .mp4 URL">
+      <button>Add Video</button>
+    </div>
+  
+  </div>
+  
+  <script>
+    
+    let promotions = [];
+
+    function postPromotion() {
+      const promotionText = document.getElementById('promotion-input').value;
+      if (promotionText) {
+        promotions.push(promotionText);
+        document.getElementById('promotion-input').value = ''; 
+        displayPromotions();
+      }
+    }
+
+    function displayPromotions() {
+      const promotionsList = document.getElementById('promotions-list');
+      promotionsList.innerHTML = '<h4>Current Promotions:</h4>';
+      promotions.forEach((promotion, index) => {
+        promotionsList.innerHTML += `<p>${index + 1}. ${promotion}</p>`;
+      });
+    }
+
+   
+    function saveChanges() {
+  const services = [
+    { name: document.getElementById("service1-name").value, price: document.getElementById("service1-price").value },
+    { name: document.getElementById("service2-name").value, price: document.getElementById("service2-price").value },
+    { name: document.getElementById("service3-name").value, price: document.getElementById("service3-price").value },
+    { name: document.getElementById("service4-name").value, price: document.getElementById("service4-price").value },
+    { name: document.getElementById("service5-name").value, price: document.getElementById("service5-price").value },
+    { name: document.getElementById("service6-name").value, price: document.getElementById("service6-price").value },
+  ];
+  
+  alert("Changes Saved!");
+  console.log(services); // For debugging, you can log the updated services
+}
+
+
+   
+    const bookings = [
+      { name: 'John Doe', service: 'Car Wash', date: '2025-04-28', details: 'Booked a car wash for 2 PM.' },
+      { name: 'Jane Smith', service: 'Detailing', date: '2025-04-29', details: 'Booked a detailing service for 3 PM.' }
+    ];
+
+    function displayBookings() {
+      const bookingList = document.getElementById('booking-list');
+      bookings.forEach(booking => {
+        bookingList.innerHTML += `
+          <tr>
+            <td>${booking.name}</td>
+            <td>${booking.service}</td>
+            <td>${booking.date}</td>
+            <td>${booking.details}</td>
+          </tr>
+        `;
+      });
+    }
+
+   
+    window.onload = displayBookings;
+
+    
+  </script>
+  <script>
+    function checkLogin() {
+      const cookies = document.cookie.split('; ').reduce((acc, cookie) => {
+        const [key, value] = cookie.split('=');
+        acc[key] = value;
+        return acc;
+      }, {});
+  
+      if (cookies["admin@cleanjet.com"] !== "true") {
+        window.location.href = "login.html";
+      }
+    }
+  
+    window.onload = checkLogin;
+  </script>
+  
+  
+  
+  
+
+
+
+</body>
+</html>

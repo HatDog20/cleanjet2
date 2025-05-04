@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CleanJet - Landing Page</title>
+  <link rel="stylesheet" href="css/landing.css">
+  <link rel="stylesheet" href="css/navbar.css">
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="container">
+        <h1 class="navbar-brand">
+          <img src="images/logo1.png" alt="CleanJet Logo" style="height: 100px;">
+        </h1>
+        <button class="navbar-toggle" aria-label="Toggle navigation" onclick="toggleMenu()">
+          &#9776;
+        </button>
+        <ul class="navbar-nav" id="navbarLinks">
+          <li><a href="home.html" class="{{ request()->is('home') ? 'active' : '' }}">Home</a></li>
+          <li><a href="pricing.html" class="{{ request()->is('pricing') ? 'active' : '' }}">Pricing</a></li>
+          <li><a href="booking.html" class="{{ request()->is('booking') ? 'active' : '' }}">Booking</a></li>
+          <li><a href="contact.html" class="{{ request()->is('contact') ? 'active' : '' }}">Contact Us</a></li>
+          <li><a href="about.html" class="{{ request()->is('about') ? 'active' : '' }}">About Us</a></li>
+  
+          <!-- Services Dropdown -->
+          <li class="dropdown">
+            <a href="#" class="dropbtn {{ request()->is('carwash') || request()->is('detailing') || request()->is('waxing') ? 'active' : '' }}">Services</a>
+            <div class="dropdown-content">
+              <a href="carwash.html" class="{{ request()->is('carwash') ? 'active' : '' }}">Car Wash</a>
+              <a href="detailing.html" class="{{ request()->is('detailing') ? 'active' : '' }}">Detailing</a>
+              <a href="waxing.html" class="{{ request()->is('waxing') ? 'active' : '' }}">Waxing</a>
+            </div>
+          </li>
+  
+          <!-- More Dropdown -->
+          <li class="dropdown">
+            <a href="#" class="dropbtn {{ request()->is('gallery') || request()->is('testimonials') || request()->is('faqs') || request()->is('promotions') || request()->is('maintenance') || request()->is('blogs') ? 'active' : '' }}">More</a>
+            <div class="dropdown-content">
+              <a href="gallery.html" class="{{ request()->is('gallery') ? 'active' : '' }}">Gallery</a>
+              <a href="testimonials.html" class="{{ request()->is('testimonials') ? 'active' : '' }}">Testimonials</a>
+              <a href="faqs.html" class="{{ request()->is('faqs') ? 'active' : '' }}">FAQs</a>
+              <a href="promotions.html" class="{{ request()->is('promotions') ? 'active' : '' }}">Promotions</a>
+              <a href="maintenance.html" class="{{ request()->is('maintenance') ? 'active' : '' }}">Maintenance Tips</a>
+              <a href="blogs.html" class="{{ request()->is('blogs') ? 'active' : '' }}">Blogs</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  
+
+      <main>
+       
+        <section class="hero" style="background: url('images/wash.jpg') no-repeat center center/cover; height: 60vh; color: rgb(12, 11, 11); text-align: center; padding: 60px 20px;">
+          <div class="hero-content">
+              <h2 style="color: black; text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); background-color: rgba(255, 255, 255, 0.5); padding: 10px; border-radius: 5px;">Welcome to CleanJet</h2>
+              <p style="color: rgb(0, 0, 0); text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5); background-color: rgba(255, 255, 255, 0.5); padding: 10px; border-radius: 5px;">Your trusted car and motorcycle wash service!</p>
+              <a href="booking.html" class="btn">Book Now</a>
+          </div>
+        </section>
+      
+        
+        <section class="intro">
+          <div class="container">
+            <h3>Why Choose CleanJet?</h3>
+            <p>At CleanJet, we provide premium car and motorcycle washing services. Our professional team uses state-of-the-art equipment to give your vehicle a spotless shine!</p>
+          </div>
+        </section>
+      
+        
+        <section class="services">
+          <div class="container">
+            <h3>Our Services</h3>
+            <div class="service-item">
+              <h4>Car Wash</h4>
+              <p>Get your car cleaned with high-quality products and professional service.</p>
+            </div>
+            <div class="service-item">
+              <h4>Motorcycle Wash</h4>
+              <p>Our motorcycle wash is designed for precision, ensuring your bike shines!</p>
+            </div>
+            <div class="service-item">
+              <h4>Detailing</h4>
+              <p>We offer full detailing services to give your vehicle a showroom finish, inside and out.</p>
+            </div>
+            <div class="service-item">
+              <h4>Waxing & Polishing</h4>
+              <p>Protect your vehicle’s paint with professional waxing and polishing treatments.</p>
+            </div>
+          </div>
+        </section>
+      
+        
+        <section class="testimonials">
+          <div class="container">
+            <h3>What Our Customers Say</h3>
+            <div class="testimonial-item">
+              <p>"CleanJet did an amazing job on my car! It looks brand new and I couldn't be happier with the service!"</p>
+              <span>- John Doe</span>
+            </div>
+            <div class="testimonial-item">
+              <p>"I trust CleanJet with all my motorcycle washes. They always go above and beyond to make sure it's perfect!"</p>
+              <span>- Jane Smith</span>
+            </div>
+          </div>
+        </section>
+      
+        
+        <section class="pricing">
+          <div class="container">
+            <h3>Our Pricing Plans</h3>
+            <div class="pricing-item">
+              <h4>Basic Wash</h4>
+              <p>Perfect for a quick clean-up.</p>
+              <span>$25</span>
+              <a href="booking.html" class="btn">Book Now</a>
+            </div>
+            <div class="pricing-item">
+              <h4>Full Detail</h4>
+              <p>In-depth cleaning with interior and exterior treatments.</p>
+              <span>$80</span>
+              <a href="booking.html" class="btn">Book Now</a>
+            </div>
+            <div class="pricing-item">
+              <h4>Premium Package</h4>
+              <p>Complete service including waxing, polishing, and detailing.</p>
+              <span>$150</span>
+              <a href="booking.html" class="btn">Book Now</a>
+            </div>
+          </div>
+        </section>
+      
+        
+        <section class="cta">
+          <div class="container">
+            <h3>Get Your Vehicle Looking Brand New!</h3>
+            <p>Book an appointment with CleanJet today and enjoy a spotless vehicle.</p>
+            <a href="booking.html" class="btn">Book Now</a>
+          </div>
+        </section>
+      </main>
+      
+
+      <link rel="stylesheet" href="css/footer.css">
+      <footer>
+        <div class="footer-container">
+          <div class="footer-about">
+            <h3>About CleanJet</h3>
+            <p>CleanJet provides reliable, high-quality cleaning services for homes and businesses throughout Tagum City and beyond.</p>
+          </div>
+      
+          <div class="footer-links">
+            <h3>Quick Links</h3>
+            <ul>
+              <li><a href="home.html">Home</a></li>
+              <li><a href="terms.html">Terms</a></li>
+              <li><a href="gallery.html">Gallery</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+      
+          <div class="footer-contact">
+            <h3>Contact Us</h3>
+            <p>Email: support@cleanjet.com</p>
+            <p>Phone: +63 912 345 6789</p>
+            <p>Tagum City, Philippines</p>
+          </div>
+      
+          <div class="footer-social">
+            <h3>Follow Us</h3>
+            <a href="#">Facebook</a><br>
+            <a href="#">Instagram</a><br>
+            <a href="#">Twitter</a>
+          </div>
+        </div>
+      
+        <div class="footer-bottom">
+          <p>&copy; 2025 CleanJet | Designed by Ken E. Caupit. All rights reserved.</p>
+        </div>
+      </footer>
+
+  <script>
+    const toggleButton = document.querySelector('.navbar-toggle');
+    const navbarNav = document.querySelector('.navbar-nav');
+  
+    toggleButton.addEventListener('click', () => {
+      navbarNav.classList.toggle('active');
+    });
+    function toggleMenu() {
+    const navbarLinks = document.getElementById('navbarLinks');
+    navbarLinks.classList.toggle('show'); // Toggle the 'show' class to display the menu
+}
+  </script>
+</body>
+</html>
